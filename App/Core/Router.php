@@ -23,7 +23,6 @@ class Router
             switch ($url[0]) {
                 case 'accueil':
                     require URL."public/Views/homeView.php";
-                    var_dump($_SESSION);
                     break;
 
                 case 'connexion':

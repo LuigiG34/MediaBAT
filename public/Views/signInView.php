@@ -20,5 +20,5 @@ $css = "forms.css";
 $title = "MEDIABAT - Se connecter";
 $description = "Connectez-vous pour accéder à votre compte MEDIABAT.";
 $content = ob_get_clean();
-require_once "../template.php";
+require_once "./template.php";
 ?>

@@ -2,7 +2,7 @@
 
 // use Autololoader & Router to start the App
 use App\Core\Router;
-use App\Autoloader;
+use Autoloader\Autoloader;
 
 // Define URL at project base
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']));

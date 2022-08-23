@@ -17,5 +17,5 @@ $title = "MEDIABAT - ERREUR_404";
 $description = "La page que vous cherchez n'existe pas.";
 $content = ob_get_clean();
 $script = "404.js";
-require_once "../template.php";
+require_once "./template.php";
 ?> 

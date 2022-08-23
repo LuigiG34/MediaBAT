@@ -13,20 +13,23 @@ class Database extends PDO
     // Instance unique de la class
     private static $instance;
 
+    // Informations de bdd
+    private const DBHOST = 'localhost';
+    private const DBUSER = 'root';
+    private const DBPASS = '';
+    private const DBNAME = 'mediabat';
+
     // set bdd
     public function __construct()
     {
-        // Database config.ini info
-        $config = parse_ini_file(__DIR__."../config.ini");
+        // DSN bdd
+        $_dsn = "mysql:host=".self::DBHOST.";dbname=".self::DBNAME;
         
-        // DSN database
-        $_dsn = "mysql:host=".$config['DBHOST'].";dbname=".$config['DBNAME'];
-        
-        // Call constructor of PDO class
+        // On appelle le constructeur de la class PDO
         try {
-            parent::__construct($_dsn, $config['DBUSER'], $config['DBPASS']);
+            parent::__construct($_dsn, self::DBUSER, self::DBPASS);
 
-            // $this references PDO
+            // $this fait reference a PDO ici
             $this->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, 'SET NAMES utf8');
             $this->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             $this->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -36,7 +39,7 @@ class Database extends PDO
         }
     }
 
-    // get database
+    // get bdd
     public static function getBdd() : self
     {
         if(self::$instance === null){

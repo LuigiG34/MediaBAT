@@ -78,5 +78,5 @@ $title = "MEDIABAT - S'inscrire";
 $description = "Inscrivez-vous pour créer votre compte MEDIABAT.";
 $content = ob_get_clean();
 $script = "inscription.js";
-require_once "../template.php";
+require_once "./template.php";
 ?>

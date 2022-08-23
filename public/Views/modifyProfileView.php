@@ -42,5 +42,5 @@ $css = "forms.css";
 $title = "MEDIABAT - Modifier votre profil";
 $description = "Modifier votre profil MEDIABAT.";
 $content = ob_get_clean();
-require_once "../template.php";
+require_once "./template.php";
 ?>

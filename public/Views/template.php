@@ -1,8 +1,8 @@
 <?php
 
 // On definie une constante pour le chemin vers les assets
-define('ASSETS_PATH', 'http://localhost/mediabat/public/assets/');
-define('VIEWS_PATH', 'http://localhost/mediabat/');
+define('ASSETS_PATH', 'http://localhost/mediabat_2/public/assets/');
+define('VIEWS_PATH', 'http://localhost/mediabat_2/');
 
 ?>
 <!DOCTYPE html>

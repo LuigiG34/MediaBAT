@@ -48,4 +48,25 @@ class UserController
 
         $this->UserClass->setSession();
     }
+
+    public function signUpUser()
+    {
+
+    }
+
+    public function signInUser()
+    {
+
+    }
+
+    public function signOutUser()
+    {
+        if(!isset($_SESSION['user'])){
+            CoreController::alert('danger','You are not connected !');
+        }
+
+        session_destroy();
+        unset($_SESSION['user']);
+        header("Location: accueil");
+    }
 }
