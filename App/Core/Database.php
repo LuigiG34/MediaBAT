@@ -40,7 +40,7 @@ class Database extends PDO
     }
 
     // get bdd
-    public static function getBdd() : self
+    public static function getDb() : self
     {
         if(self::$instance === null){
             // new self = new Db()
