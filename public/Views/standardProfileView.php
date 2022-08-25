@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-
+<!--IF USER STATUS = standard -->
 <section class="d-flex flex-column align-items-center justify-content-center big-container">
     <main class="d-flex flex-column align-items-center justify-content-around">
         <img class="profile-img" src="../assets/img/defaultprofile.jpg"  alt="">
@@ -17,6 +17,8 @@ ob_start();
     </main>
 </section>
 
+<!-- IF USER STATUS = proBTP -->
+<!-- add content of professionalProfileView.php -->
 <?php
 $css = "profile.css";
 $title = "MEDIABAT - Votre profil";
