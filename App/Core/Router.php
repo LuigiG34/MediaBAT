@@ -34,7 +34,11 @@ class Router
                     break;
                 
                 case 'profil':
-                    require URL."public/Views/profil.php";                     
+                    require URL."public/Views/profileView.php";                     
+                    break;
+                
+                case 'modify':
+                    require URL."public/Views/modifyProfileView.php";
                     break;
 
                 default:
