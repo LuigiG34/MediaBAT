@@ -84,5 +84,5 @@ zipcodeInput.addEventListener('blur', () => {
  * INPUT EMPTY VERIF
  * PASSWORD SAME VERIF
  * EMAIL VERIF
- * Button only appears once all verif return true 
+ * Create btn once all verif return true 
  */
