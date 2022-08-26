@@ -42,13 +42,6 @@ define('VIEWS_PATH', 'http://localhost/mediabat_2/');
             <a href="<?=  VIEWS_PATH ?>profil" class="nav-links">
                 <p>PROFIL</p>
             </a>
-            <!--
-            <a href="../contact/messagerie.php" class="nav-links">
-                <p>MESSAGES</p>
-            </a>
-            <a href="../admin/administration.php" class="nav-links">
-                <p>ADMIN</p>
-            </a> -->
             </div>
         </nav>
     </header>
@@ -107,6 +100,17 @@ define('VIEWS_PATH', 'http://localhost/mediabat_2/');
         </section>
     </section>
 
+    <?php if (!empty($_SESSION['alert'])) : ?>
+    <div class="container mt-3">
+      <div class="alert alert-<?= $_SESSION['alert']['type'] ?> text-center alert-dismissible fade show" role="alert">
+        <?= $_SESSION['alert']['msg'] ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+    <?php unset($_SESSION['alert']); ?>
+  <?php endif; ?>
+
+</div>
     <script src="<?=  ASSETS_PATH ?>bootstrap/js/bootstrap.bundle.js"></script>
     <script src="<?=  ASSETS_PATH ?>js/template.js"></script>
     <?php if (isset($script)){?>
