@@ -21,22 +21,22 @@ class Router
             $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
             // If url = case
             switch ($url[0]) {
-                case 'accueil':
+                case 'home':
                     require URL."public/Views/homeView.php";
                     break;
 
-                case 'connexion':
+                case 'signin':
                     require URL."public/Views/signInView.php";
                     break;
                 
-                case 'inscription':
+                case 'signup':
                     require URL."public/Views/signUpView.php";
                     break;
                 
-                case 'profil':
+                case 'profile':
                     require URL."public/Views/profileView.php";                     
                     break;
-                
+                 
                 case 'modify':
                     require URL."public/Views/modifyProfileView.php";
                     break;
