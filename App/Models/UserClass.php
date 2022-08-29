@@ -27,7 +27,7 @@ class UserClass
      */
     public function setSession()
     {
-        $_SESSION['USER'] = [
+        $_SESSION["user"] = [
             "id" => $this->id_user,
             "fname" => $this->fname_user,
             "lname" => $this->lname_user,

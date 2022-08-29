@@ -2,7 +2,7 @@
 ob_start();
 ?>
 
-<body>
+<!-- <body> -->
     <section class="banner">
         <div class="gradient">
             <article class="d-flex flex-column align-items-end justify-content-center">
@@ -183,7 +183,7 @@ ob_start();
             </article>
         </section>
     </main>
-</body>
+<!-- </body> -->
 
 <?php
 $css = "index.css";

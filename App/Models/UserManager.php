@@ -27,7 +27,7 @@ class UserManager extends Database
      */
     public function signUp($fname,$lname,$email,$password,$zipcode,$city,$birth_date,$status,$job)
     {
-        $sql = "INSERT INTO users (fname_user, lname_user, email_user, password_user, zipcode_user, city_user, birthdate_user, status_user, job_user) VALUES (:fname, :lname, :email, :password, :zipcode, :city, :status, :job)";
+        $sql = "INSERT INTO users (fname_user, lname_user, email_user, password_user, zipcode_user, city_user, birthdate_user, status_user, job_user) VALUES (:fname, :lname, :email, :password, :zipcode, :city, :birthdate, :status, :job)";
         $stmt = $this->getDb()->prepare($sql);
         $stmt->execute([
             ":fname"=>$fname,
@@ -36,6 +36,7 @@ class UserManager extends Database
             ":password"=>$password,
             ":zipcode"=>$zipcode,
             ":city"=>$city,
+            ":birthdate"=>$birth_date,
             ":status"=>$status,
             ":job"=>$job
         ]);
@@ -90,10 +91,10 @@ class UserManager extends Database
      */
     public function getByEmail($email)
     {
-        $sql = "SELECT * FROM users WHERE email_user = :email";
+        $sql = "SELECT * FROM users WHERE email_user = :email_user";
         $stmt = $this->getDb()->prepare($sql);
         $stmt->execute([
-            ":email"=>$email
+            ":email_user"=>$email
         ]);
         $data = $stmt->fetch(PDO::FETCH_OBJ);
 

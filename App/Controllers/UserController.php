@@ -75,9 +75,7 @@ class UserController
 
             CoreController::alert("success", "You successfully registered.");
             header('Location: home');
-        }else{
-            CoreController::alert("danger", "An error occured.");
-            header('Location: signup');
+            exit;
         }
     }
 
@@ -100,11 +98,16 @@ class UserController
                 if(password_verify($password, $this->UserClass->getPassword_user())) {
                     CoreController::alert("success","User logged in successfully !");
                     header("Location: home");
+                    exit;
                 }else{
                     CoreController::alert("danger","Passwords don't match !");
+                    header("Location: signin");
+                    exit;
                 }
             }else{
                 CoreController::alert("danger","User not found !");
+                header("Location: signin");
+                exit;
             }
         }
     }
@@ -114,12 +117,13 @@ class UserController
      */
     public function signOutUser()
     {
-        if(!isset($_SESSION['user'])){
+        if(!isset($_SESSION['USER'])){
             CoreController::alert('danger','You are not connected !');
         }
 
         session_destroy();
-        unset($_SESSION['user']);
+        unset($_SESSION['USER']);
         header("Location: home");
+        exit;
     }
 }

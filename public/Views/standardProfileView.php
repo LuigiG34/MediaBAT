@@ -1,10 +1,10 @@
 <?php
 ob_start();
 ?>
-<!--IF USER STATUS = standard -->
+
 <section class="d-flex flex-column align-items-center justify-content-center big-container">
     <main class="d-flex flex-column align-items-center justify-content-around">
-        <img class="profile-img" src="../assets/img/defaultprofile.jpg"  alt="">
+        <img class="profile-img" src="../public/assets/img/defaultprofile.jpg"  alt="">
         <h1 class="text-center">NOM Prenom</h1>
         <h2>Utilisateur Standard</h2>
         <article class="d-flex flex-row align-items-center justify-content-end">
@@ -17,8 +17,6 @@ ob_start();
     </main>
 </section>
 
-<!-- IF USER STATUS = proBTP -->
-<!-- add content of professionalProfileView.php -->
 <?php
 $css = "profile.css";
 $title = "MEDIABAT - Votre profil";

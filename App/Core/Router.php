@@ -2,11 +2,12 @@
 
 namespace App\Core;
 
+session_start();
+
 use App\Controllers\PublicationController;
 use App\Controllers\UserController;
 
-session_start();
-
+var_dump($_SESSION);
 class Router
 {
     public function start()
@@ -26,15 +27,34 @@ class Router
                     break;
 
                 case 'signin':
+                    $UserController->signInUser();
                     require URL."public/Views/signInView.php";
                     break;
                 
                 case 'signup':
+                    $UserController->signUpUser();
                     require URL."public/Views/signUpView.php";
                     break;
-                
+
+                case 'signout':
+                    $UserController->signOutUser();
+                    break;
+
                 case 'profile':
-                    require URL."public/Views/profileView.php";                     
+                    if(isset($url[1])){
+                        if($url[1] == "standard"){
+                            require URL."public/Views/standardProfileView.php";                     
+                        }
+                        if($url[1] == "professional"){
+                            require URL."public/Views/professionalProfileView.php";                     
+                        }
+                        if($url[1] == "modify"){
+                            require URL."public/Views/modifyProfileView.php";                     
+                        }
+                    }else{
+                        http_response_code(404);
+                        require URL."public/Views/404.php";
+                    }
                     break;
                  
                 case 'modify':
